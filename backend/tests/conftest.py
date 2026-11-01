@@ -1,4 +1,10 @@
+import os
+import sys
 import pytest
+
+# Ensure repository root is on sys.path for direct pytest and CI runners
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import sessionmaker
 from backend.app.database import Base, get_db

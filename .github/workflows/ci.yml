@@ -31,8 +31,10 @@ jobs:
           python -m data_engine.run_pipeline --profile starter --seed 20261022
 
       - name: Run pytest automated test suite
+        env:
+          PYTHONPATH: .
         run: |
-          pytest -v backend/tests
+          python -m pytest -v backend/tests
 
   frontend-build:
     name: Frontend TypeScript & Bundle Build
