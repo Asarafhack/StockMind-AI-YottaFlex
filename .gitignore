@@ -1,0 +1,12 @@
+
+# Large generated challenge data
+backend/stockmind.db
+output/exports/seed.sql
+output/exports/inventory_movements.json
+output/exports/inventory_balances.json
+output/exports/inventory_movements.csv
+output/exports/inventory_balances.csv
+*.zip
+*.db
+*.sqlite
+*.sqlite3
