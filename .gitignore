@@ -1,16 +1,79 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Large generated challenge data
-backend/stockmind.db
-output/exports/seed.sql
-output/exports/inventory_movements.json
-output/exports/inventory_balances.json
-output/exports/inventory_movements.csv
-output/exports/inventory_balances.csv
-*.zip
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables & Secrets
+.env
+*.local
+*.secret
+*.key
+
+# Database
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 
-# Node dependencies
+# Node / Frontend Dependencies & Build Caches
 node_modules/
 frontend/node_modules/
+frontend/.vite/
+.npm
+.eslintcache
+
+# Testing & CI Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large Generated Datasets & Binary Archives (GitHub 100MB limit protection)
+*.zip
+*.tar.gz
+*.7z
+output/exports/*.sql
+output/exports/*.csv
+output/exports/*.json
+output/exports/inventory_movements.parquet
+output/exports/inventory_balances.parquet
+
+# Keep sample / metadata exports and ground truth tracked
+!output/ground_truth/
+!output/checksums.json
+!output/validation_report.json
+!output/anomaly_evaluation.json
+!output/benchmark_report.json

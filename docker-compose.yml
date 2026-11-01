@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: stockmind-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: stockmind
+      POSTGRES_USER: stockmind
+      POSTGRES_PASSWORD: stockmind_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U stockmind -d stockmind"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stockmind-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=postgresql+psycopg://stockmind:stockmind_dev@postgres:5432/stockmind
+      - SECRET_KEY=stockmind_production_secret_key_2026
+      - API_PORT=8000
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:

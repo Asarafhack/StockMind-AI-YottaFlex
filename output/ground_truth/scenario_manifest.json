@@ -1,0 +1,1169 @@
+{
+  "generation_seed": 20261022,
+  "generated_at": "2026-11-01T10:28:27.109924",
+  "total_scenarios": 116,
+  "anomaly_scenarios": 16,
+  "benign_scenarios": 100,
+  "scenarios": [
+    {
+      "scenario_id": "SCENARIO_001_BALANCE_MISMATCH_01",
+      "entity_id": "BAL-SKU-000001-LOC-000001",
+      "entity_type": "InventoryBalance",
+      "issue_type": "BALANCE_MISMATCH",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_RECONCILIATION_EXCEPTION",
+      "expected_calculation": "Stored balance drifts by +75 units from movement ledger",
+      "explanation": "Simulated network dropped transaction #1 causing projected balance to exceed immutable movements."
+    },
+    {
+      "scenario_id": "SCENARIO_001_BALANCE_MISMATCH_02",
+      "entity_id": "BAL-SKU-000002-LOC-000002",
+      "entity_type": "InventoryBalance",
+      "issue_type": "BALANCE_MISMATCH",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_RECONCILIATION_EXCEPTION",
+      "expected_calculation": "Stored balance drifts by +100 units from movement ledger",
+      "explanation": "Simulated network dropped transaction #2 causing projected balance to exceed immutable movements."
+    },
+    {
+      "scenario_id": "SCENARIO_001_BALANCE_MISMATCH_03",
+      "entity_id": "BAL-SKU-000003-LOC-000003",
+      "entity_type": "InventoryBalance",
+      "issue_type": "BALANCE_MISMATCH",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_RECONCILIATION_EXCEPTION",
+      "expected_calculation": "Stored balance drifts by +125 units from movement ledger",
+      "explanation": "Simulated network dropped transaction #3 causing projected balance to exceed immutable movements."
+    },
+    {
+      "scenario_id": "SCENARIO_001_BALANCE_MISMATCH_04",
+      "entity_id": "BAL-SKU-000004-LOC-000004",
+      "entity_type": "InventoryBalance",
+      "issue_type": "BALANCE_MISMATCH",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_RECONCILIATION_EXCEPTION",
+      "expected_calculation": "Stored balance drifts by +150 units from movement ledger",
+      "explanation": "Simulated network dropped transaction #4 causing projected balance to exceed immutable movements."
+    },
+    {
+      "scenario_id": "SCENARIO_002_RESERVATION_OVERFLOW_01",
+      "entity_id": "SKU-000005:LOC-000005",
+      "entity_type": "ReservationGroup",
+      "issue_type": "RESERVATION_OVERFLOW",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_OR_FLAG_RESERVATION",
+      "expected_calculation": "Active reservations exceed physical reservable stock by 50,000 units",
+      "explanation": "Simulated concurrent race condition #1 overselling available inventory."
+    },
+    {
+      "scenario_id": "SCENARIO_002_RESERVATION_OVERFLOW_02",
+      "entity_id": "SKU-000006:LOC-000006",
+      "entity_type": "ReservationGroup",
+      "issue_type": "RESERVATION_OVERFLOW",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_OR_FLAG_RESERVATION",
+      "expected_calculation": "Active reservations exceed physical reservable stock by 50,000 units",
+      "explanation": "Simulated concurrent race condition #2 overselling available inventory."
+    },
+    {
+      "scenario_id": "SCENARIO_002_RESERVATION_OVERFLOW_03",
+      "entity_id": "SKU-000007:LOC-000007",
+      "entity_type": "ReservationGroup",
+      "issue_type": "RESERVATION_OVERFLOW",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_OR_FLAG_RESERVATION",
+      "expected_calculation": "Active reservations exceed physical reservable stock by 50,000 units",
+      "explanation": "Simulated concurrent race condition #3 overselling available inventory."
+    },
+    {
+      "scenario_id": "SCENARIO_002_RESERVATION_OVERFLOW_04",
+      "entity_id": "SKU-000008:LOC-000008",
+      "entity_type": "ReservationGroup",
+      "issue_type": "RESERVATION_OVERFLOW",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_OR_FLAG_RESERVATION",
+      "expected_calculation": "Active reservations exceed physical reservable stock by 50,000 units",
+      "explanation": "Simulated concurrent race condition #4 overselling available inventory."
+    },
+    {
+      "scenario_id": "SCENARIO_003_BLOCKED_STOCK_FULFILLMENT_01",
+      "entity_id": "ALC-INJECTED-BLOCKED-SKU-000009",
+      "entity_type": "Allocation",
+      "issue_type": "BLOCKED_STOCK_FULFILLMENT",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_FULFILLMENT",
+      "expected_calculation": "Allocation quantity assigned against quarantined/damaged lot",
+      "explanation": "Operator bypassed ATP validation and allocated blocked inventory case #1."
+    },
+    {
+      "scenario_id": "SCENARIO_003_BLOCKED_STOCK_FULFILLMENT_02",
+      "entity_id": "ALC-INJECTED-BLOCKED-SKU-000010",
+      "entity_type": "Allocation",
+      "issue_type": "BLOCKED_STOCK_FULFILLMENT",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_FULFILLMENT",
+      "expected_calculation": "Allocation quantity assigned against quarantined/damaged lot",
+      "explanation": "Operator bypassed ATP validation and allocated blocked inventory case #2."
+    },
+    {
+      "scenario_id": "SCENARIO_003_BLOCKED_STOCK_FULFILLMENT_03",
+      "entity_id": "ALC-INJECTED-BLOCKED-SKU-000011",
+      "entity_type": "Allocation",
+      "issue_type": "BLOCKED_STOCK_FULFILLMENT",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_FULFILLMENT",
+      "expected_calculation": "Allocation quantity assigned against quarantined/damaged lot",
+      "explanation": "Operator bypassed ATP validation and allocated blocked inventory case #3."
+    },
+    {
+      "scenario_id": "SCENARIO_003_BLOCKED_STOCK_FULFILLMENT_04",
+      "entity_id": "ALC-INJECTED-BLOCKED-SKU-000012",
+      "entity_type": "Allocation",
+      "issue_type": "BLOCKED_STOCK_FULFILLMENT",
+      "is_anomaly": true,
+      "expected_decision": "REJECT_FULFILLMENT",
+      "expected_calculation": "Allocation quantity assigned against quarantined/damaged lot",
+      "explanation": "Operator bypassed ATP validation and allocated blocked inventory case #4."
+    },
+    {
+      "scenario_id": "SCENARIO_004_PREMATURE_TRANSFER_01",
+      "entity_id": "TRN-INJECTED-PREMATURE-01",
+      "entity_type": "Transfer",
+      "issue_type": "PREMATURE_TRANSFER",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_TRANSFER_ACCOUNTING_EXCEPTION",
+      "expected_calculation": "Destination credited before physical dispatch; double counted",
+      "explanation": "Inbound scanner checked in shipment #1 without outbound dispatch confirmation."
+    },
+    {
+      "scenario_id": "SCENARIO_004_PREMATURE_TRANSFER_02",
+      "entity_id": "TRN-INJECTED-PREMATURE-02",
+      "entity_type": "Transfer",
+      "issue_type": "PREMATURE_TRANSFER",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_TRANSFER_ACCOUNTING_EXCEPTION",
+      "expected_calculation": "Destination credited before physical dispatch; double counted",
+      "explanation": "Inbound scanner checked in shipment #2 without outbound dispatch confirmation."
+    },
+    {
+      "scenario_id": "SCENARIO_004_PREMATURE_TRANSFER_03",
+      "entity_id": "TRN-INJECTED-PREMATURE-03",
+      "entity_type": "Transfer",
+      "issue_type": "PREMATURE_TRANSFER",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_TRANSFER_ACCOUNTING_EXCEPTION",
+      "expected_calculation": "Destination credited before physical dispatch; double counted",
+      "explanation": "Inbound scanner checked in shipment #3 without outbound dispatch confirmation."
+    },
+    {
+      "scenario_id": "SCENARIO_004_PREMATURE_TRANSFER_04",
+      "entity_id": "TRN-INJECTED-PREMATURE-04",
+      "entity_type": "Transfer",
+      "issue_type": "PREMATURE_TRANSFER",
+      "is_anomaly": true,
+      "expected_decision": "FLAG_TRANSFER_ACCOUNTING_EXCEPTION",
+      "expected_calculation": "Destination credited before physical dispatch; double counted",
+      "explanation": "Inbound scanner checked in shipment #4 without outbound dispatch confirmation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0016",
+      "entity_id": "BAL-SKU-000017-LOC-000017",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0017",
+      "entity_id": "BAL-SKU-000018-LOC-000018",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0018",
+      "entity_id": "BAL-SKU-000019-LOC-000019",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0019",
+      "entity_id": "BAL-SKU-000020-LOC-000020",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0020",
+      "entity_id": "BAL-SKU-000021-LOC-000021",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0021",
+      "entity_id": "BAL-SKU-000022-LOC-000022",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0022",
+      "entity_id": "BAL-SKU-000023-LOC-000023",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0023",
+      "entity_id": "BAL-SKU-000024-LOC-000024",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0024",
+      "entity_id": "BAL-SKU-000025-LOC-000025",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0025",
+      "entity_id": "BAL-SKU-000026-LOC-000026",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0026",
+      "entity_id": "BAL-SKU-000027-LOC-000027",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0027",
+      "entity_id": "BAL-SKU-000028-LOC-000028",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0028",
+      "entity_id": "BAL-SKU-000029-LOC-000029",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0029",
+      "entity_id": "BAL-SKU-000030-LOC-000030",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0030",
+      "entity_id": "BAL-SKU-000031-LOC-000031",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0031",
+      "entity_id": "BAL-SKU-000032-LOC-000032",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0032",
+      "entity_id": "BAL-SKU-000033-LOC-000033",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0033",
+      "entity_id": "BAL-SKU-000034-LOC-000034",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0034",
+      "entity_id": "BAL-SKU-000035-LOC-000035",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0035",
+      "entity_id": "BAL-SKU-000036-LOC-000036",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0036",
+      "entity_id": "BAL-SKU-000037-LOC-000037",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0037",
+      "entity_id": "BAL-SKU-000038-LOC-000038",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0038",
+      "entity_id": "BAL-SKU-000039-LOC-000039",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0039",
+      "entity_id": "BAL-SKU-000040-LOC-000040",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0040",
+      "entity_id": "BAL-SKU-000041-LOC-000041",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0041",
+      "entity_id": "BAL-SKU-000042-LOC-000042",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0042",
+      "entity_id": "BAL-SKU-000043-LOC-000043",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0043",
+      "entity_id": "BAL-SKU-000044-LOC-000044",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0044",
+      "entity_id": "BAL-SKU-000045-LOC-000045",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0045",
+      "entity_id": "BAL-SKU-000046-LOC-000046",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0046",
+      "entity_id": "BAL-SKU-000047-LOC-000047",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0047",
+      "entity_id": "BAL-SKU-000048-LOC-000048",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0048",
+      "entity_id": "BAL-SKU-000049-LOC-000049",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0049",
+      "entity_id": "BAL-SKU-000050-LOC-000050",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0050",
+      "entity_id": "BAL-SKU-000051-LOC-000051",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0051",
+      "entity_id": "BAL-SKU-000052-LOC-000052",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0052",
+      "entity_id": "BAL-SKU-000053-LOC-000053",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0053",
+      "entity_id": "BAL-SKU-000054-LOC-000054",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0054",
+      "entity_id": "BAL-SKU-000055-LOC-000055",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0055",
+      "entity_id": "BAL-SKU-000056-LOC-000056",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0056",
+      "entity_id": "BAL-SKU-000057-LOC-000057",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0057",
+      "entity_id": "BAL-SKU-000058-LOC-000058",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0058",
+      "entity_id": "BAL-SKU-000059-LOC-000059",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0059",
+      "entity_id": "BAL-SKU-000060-LOC-000060",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0060",
+      "entity_id": "BAL-SKU-000061-LOC-000061",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0061",
+      "entity_id": "BAL-SKU-000062-LOC-000062",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0062",
+      "entity_id": "BAL-SKU-000063-LOC-000063",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0063",
+      "entity_id": "BAL-SKU-000064-LOC-000064",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0064",
+      "entity_id": "BAL-SKU-000065-LOC-000065",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0065",
+      "entity_id": "BAL-SKU-000066-LOC-000066",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0066",
+      "entity_id": "BAL-SKU-000067-LOC-000067",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0067",
+      "entity_id": "BAL-SKU-000068-LOC-000068",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0068",
+      "entity_id": "BAL-SKU-000069-LOC-000069",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0069",
+      "entity_id": "BAL-SKU-000070-LOC-000070",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0070",
+      "entity_id": "BAL-SKU-000071-LOC-000071",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0071",
+      "entity_id": "BAL-SKU-000072-LOC-000072",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0072",
+      "entity_id": "BAL-SKU-000073-LOC-000073",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0073",
+      "entity_id": "BAL-SKU-000074-LOC-000074",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0074",
+      "entity_id": "BAL-SKU-000075-LOC-000075",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0075",
+      "entity_id": "BAL-SKU-000076-LOC-000076",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0076",
+      "entity_id": "BAL-SKU-000077-LOC-000077",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0077",
+      "entity_id": "BAL-SKU-000078-LOC-000078",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0078",
+      "entity_id": "BAL-SKU-000079-LOC-000079",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0079",
+      "entity_id": "BAL-SKU-000080-LOC-000080",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0080",
+      "entity_id": "BAL-SKU-000081-LOC-000081",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0081",
+      "entity_id": "BAL-SKU-000082-LOC-000082",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0082",
+      "entity_id": "BAL-SKU-000083-LOC-000083",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0083",
+      "entity_id": "BAL-SKU-000084-LOC-000084",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0084",
+      "entity_id": "BAL-SKU-000085-LOC-000085",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0085",
+      "entity_id": "BAL-SKU-000086-LOC-000086",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0086",
+      "entity_id": "BAL-SKU-000087-LOC-000087",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0087",
+      "entity_id": "BAL-SKU-000088-LOC-000088",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0088",
+      "entity_id": "BAL-SKU-000089-LOC-000089",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0089",
+      "entity_id": "BAL-SKU-000090-LOC-000090",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0090",
+      "entity_id": "BAL-SKU-000091-LOC-000091",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0091",
+      "entity_id": "BAL-SKU-000092-LOC-000092",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0092",
+      "entity_id": "BAL-SKU-000093-LOC-000093",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0093",
+      "entity_id": "BAL-SKU-000094-LOC-000094",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0094",
+      "entity_id": "BAL-SKU-000095-LOC-000095",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0095",
+      "entity_id": "BAL-SKU-000096-LOC-000096",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0096",
+      "entity_id": "BAL-SKU-000097-LOC-000097",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0097",
+      "entity_id": "BAL-SKU-000098-LOC-000098",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0098",
+      "entity_id": "BAL-SKU-000099-LOC-000099",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0099",
+      "entity_id": "BAL-SKU-000100-LOC-000100",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0100",
+      "entity_id": "BAL-SKU-000101-LOC-000001",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0101",
+      "entity_id": "BAL-SKU-000102-LOC-000002",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0102",
+      "entity_id": "BAL-SKU-000103-LOC-000003",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0103",
+      "entity_id": "BAL-SKU-000104-LOC-000004",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0104",
+      "entity_id": "BAL-SKU-000105-LOC-000005",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0105",
+      "entity_id": "BAL-SKU-000106-LOC-000006",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0106",
+      "entity_id": "BAL-SKU-000107-LOC-000007",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0107",
+      "entity_id": "BAL-SKU-000108-LOC-000008",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0108",
+      "entity_id": "BAL-SKU-000109-LOC-000009",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0109",
+      "entity_id": "BAL-SKU-000110-LOC-000010",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0110",
+      "entity_id": "BAL-SKU-000111-LOC-000011",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0111",
+      "entity_id": "BAL-SKU-000112-LOC-000012",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0112",
+      "entity_id": "BAL-SKU-000113-LOC-000013",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0113",
+      "entity_id": "BAL-SKU-000114-LOC-000014",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0114",
+      "entity_id": "BAL-SKU-000115-LOC-000015",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    },
+    {
+      "scenario_id": "BENIGN_NORMAL_OPERATION_0115",
+      "entity_id": "BAL-SKU-000116-LOC-000016",
+      "entity_type": "InventoryBalance",
+      "issue_type": "NONE",
+      "is_anomaly": false,
+      "expected_decision": "ACCEPT",
+      "expected_calculation": "Ledger on-hand equals stored balance exactly",
+      "explanation": "Standard balanced ledger transaction with full reconciliation."
+    }
+  ]
+}

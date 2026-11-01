@@ -1,0 +1,43 @@
+{
+  "project_name": "StockMind AI",
+  "tagline": "Unified Inventory Intelligence. Every Unit Accounted For.",
+  "author": "YottaFlex.ai Associate AI Forward Deployed Engineer Candidate",
+  "challenge_round": "Round 2 Technical Evaluation",
+  "generator_version": "1.0.0",
+  "default_seed": 20261022,
+  "generation_date": "2026-11-01",
+  "provenance": {
+    "type": "Synthetic Deterministic Engine",
+    "libraries": [
+      "NumPy 1.26+",
+      "Faker 40+",
+      "Polars 2.1+",
+      "PyArrow 24+"
+    ],
+    "license": "MIT",
+    "personal_data_leakage": false,
+    "pii_present": false
+  },
+  "profiles": {
+    "starter": {
+      "skus": 100,
+      "locations": 10,
+      "movements": 1000,
+      "orders": 100
+    },
+    "full": {
+      "skus": 5000,
+      "locations": 100,
+      "movements": 1000000,
+      "orders": 50000
+    }
+  },
+  "anomaly_scenarios_injected": [
+    "BALANCE_MISMATCH",
+    "RESERVATION_OVERFLOW",
+    "BLOCKED_STOCK_FULFILLMENT",
+    "PREMATURE_TRANSFER"
+  ],
+  "checksums_manifest_path": "output/checksums.json",
+  "ground_truth_manifest_path": "output/ground_truth/scenario_manifest.json"
+}

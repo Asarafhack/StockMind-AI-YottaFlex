@@ -1,0 +1,8 @@
+{
+  "benchmark_timestamp": 1793521464.717869,
+  "target_movements": 1000000,
+  "total_generated": 1000000,
+  "elapsed_seconds": 12.421,
+  "rows_per_second": 80509,
+  "status": "PASS"
+}
