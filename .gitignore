@@ -10,3 +10,7 @@ output/exports/inventory_balances.csv
 *.db
 *.sqlite
 *.sqlite3
+
+# Node dependencies
+node_modules/
+frontend/node_modules/
