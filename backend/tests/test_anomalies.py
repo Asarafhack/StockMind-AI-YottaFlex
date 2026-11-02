@@ -83,3 +83,32 @@ def test_four_mandatory_anomalies_detected(db_session):
     assert "BLOCKED_STOCK_FULFILLMENT" in issue_types
     assert "PREMATURE_TRANSFER" in issue_types
     assert len(detected) == 4
+
+def test_anomaly_auto_heal_lifecycle(db_session):
+    now = datetime.utcnow()
+    prod = Product(product_id="PRD-HEAL", product_name="Heal Prod", brand="Echo", category="Hardware")
+    loc = Location(location_id="LOC-HEAL-1", location_code="LC-H1", location_name="Loc H", location_type="Warehouse", address="100 H", city="Austin", region="TX")
+    sku = SKU(sku_id="SKU-HEAL-1", product_id="PRD-HEAL", sku_code="SKU-H1", variant="Standard", unit_cost=10.0, selling_price=20.0)
+    db_session.add_all([prod, loc, sku])
+    db_session.commit()
+
+    inv = InventoryEngine(db_session)
+    inv.record_movement(sku_id="SKU-HEAL-1", destination_location_id="LOC-HEAL-1", movement_type="RECEIPT", quantity=100, reference_type="PO")
+
+    # Drift balance by +50 units
+    bal = db_session.query(InventoryBalance).filter_by(sku_id="SKU-HEAL-1", location_id="LOC-HEAL-1").first()
+    bal.on_hand_quantity = 150
+    db_session.commit()
+
+    anomaly_engine = AnomalyEngine(db_session)
+    detected = anomaly_engine.scan_all_anomalies(persist=True)
+    bal_anom = [a for a in detected if a.issue_type == "BALANCE_MISMATCH"][0]
+
+    # Execute automated remediation
+    result = anomaly_engine.auto_heal_anomaly(bal_anom, operator="AI_TEST_AGENT")
+    assert result["status"] == "SUCCESS"
+    assert bal_anom.status == "RESOLVED"
+
+    # Verify balance was reconciled to movement ledger (100)
+    db_session.refresh(bal)
+    assert bal.on_hand_quantity == 100

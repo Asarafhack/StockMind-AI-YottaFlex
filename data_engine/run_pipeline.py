@@ -294,8 +294,13 @@ def run_pipeline(
 
     if populate_db:
         print("[0/10] Initializing Relational Database Schema...")
-        Base.metadata.drop_all(bind=engine)
         Base.metadata.create_all(bind=engine)
+        # Clear existing data rows cleanly so tables always remain available for concurrent queries
+        with engine.begin() as conn:
+            conn.execute(text("PRAGMA foreign_keys = OFF;"))
+            for tbl in reversed(Base.metadata.sorted_tables):
+                conn.execute(tbl.delete())
+            conn.execute(text("PRAGMA foreign_keys = ON;"))
 
     # 1. Products
     print("[1/10] Generating Products Catalog...")

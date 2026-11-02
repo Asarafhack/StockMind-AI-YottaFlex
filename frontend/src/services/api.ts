@@ -172,6 +172,11 @@ export const resolveAnomaly = async (anomaly_id: string, notes?: string) => {
   return data;
 };
 
+export const autoHealAnomaly = async (anomaly_id: string) => {
+  const { data } = await apiClient.post(`/anomalies/${anomaly_id}/auto-heal`);
+  return data;
+};
+
 export const fetchOrders = async (limit: number = 50): Promise<OrderItem[]> => {
   const { data } = await apiClient.get<OrderItem[]>('/orders', { params: { limit } });
   return data;

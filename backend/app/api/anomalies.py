@@ -112,3 +112,17 @@ def resolve_anomaly(
     db.add(audit)
     db.commit()
     return {"status": "SUCCESS", "anomaly_status": anom.status, "resolved_at": now.isoformat()}
+
+@router.post("/{anomaly_id}/auto-heal")
+def auto_heal_anomaly(
+    anomaly_id: str,
+    operator: str = "AI_AUTO_HEAL_AGENT",
+    db: Session = Depends(get_db)
+):
+    anom = db.query(AnomalyRecord).filter(AnomalyRecord.anomaly_id == anomaly_id).first()
+    if not anom:
+        raise HTTPException(status_code=404, detail="Anomaly not found")
+
+    engine = AnomalyEngine(db)
+    result = engine.auto_heal_anomaly(anom, operator=operator)
+    return result

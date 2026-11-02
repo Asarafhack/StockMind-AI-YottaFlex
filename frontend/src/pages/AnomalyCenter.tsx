@@ -4,6 +4,7 @@ import {
   triggerAnomalyScan,
   acknowledgeAnomaly,
   resolveAnomaly,
+  autoHealAnomaly,
   AnomalyItem
 } from '../services/api';
 import {
@@ -15,7 +16,9 @@ import {
   Filter,
   ArrowRight,
   ExternalLink,
-  Target
+  Target,
+  Sparkles,
+  Wrench
 } from 'lucide-react';
 
 export const AnomalyCenter: React.FC = () => {
@@ -75,6 +78,16 @@ export const AnomalyCenter: React.FC = () => {
       await loadAnomalies();
     } catch (err) {
       console.error(err);
+    }
+  };
+
+  const handleAutoHeal = async (id: string) => {
+    try {
+      const res = await autoHealAnomaly(id);
+      setActionSuccess(`Anomaly ${id} auto-healed: ${res.action_taken}`);
+      await loadAnomalies();
+    } catch (err) {
+      console.error('Failed to auto-heal', err);
     }
   };
 
@@ -235,10 +248,20 @@ export const AnomalyCenter: React.FC = () => {
                   </span>
 
                   <div className="flex items-center gap-2">
+                    {anom.status !== 'RESOLVED' && (
+                      <button
+                        onClick={() => handleAutoHeal(anom.anomaly_id)}
+                        className="px-2.5 py-1 rounded bg-cyan-950/70 text-[11px] font-semibold text-cyan-300 hover:bg-cyan-900/80 border border-cyan-700/60 flex items-center gap-1.5 shadow-sm shadow-cyan-950 transition-colors"
+                        title="Execute automated AI remediation and immutable ledger reconciliation"
+                      >
+                        <Sparkles className="w-3 h-3 text-cyan-400" />
+                        AI Auto-Heal
+                      </button>
+                    )}
                     {anom.status === 'OPEN' && (
                       <button
                         onClick={() => handleAcknowledge(anom.anomaly_id)}
-                        className="px-2.5 py-1 rounded bg-slate-800 text-[11px] text-slate-200 hover:bg-slate-700 border border-slate-700"
+                        className="px-2.5 py-1 rounded bg-slate-800 text-[11px] text-slate-200 hover:bg-slate-700 border border-slate-700 transition-colors"
                       >
                         Acknowledge
                       </button>
@@ -246,9 +269,9 @@ export const AnomalyCenter: React.FC = () => {
                     {anom.status !== 'RESOLVED' && (
                       <button
                         onClick={() => handleResolve(anom.anomaly_id)}
-                        className="px-2.5 py-1 rounded bg-emerald-900/40 text-[11px] text-emerald-300 hover:bg-emerald-800/50 border border-emerald-700"
+                        className="px-2.5 py-1 rounded bg-emerald-900/40 text-[11px] text-emerald-300 hover:bg-emerald-800/50 border border-emerald-700 transition-colors"
                       >
-                        Resolve Exception
+                        Resolve
                       </button>
                     )}
                   </div>

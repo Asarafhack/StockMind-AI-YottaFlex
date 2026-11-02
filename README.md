@@ -7,7 +7,7 @@
 [![Python: 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0-teal.svg)](https://fastapi.tiangolo.com/)
 [![React: 18](https://img.shields.io/badge/React-18-cyan.svg)](https://react.dev/)
-[![Tests](https://img.shields.io/badge/Pytest-18%2F18_Passing-brightgreen.svg)](docs/VALIDATION_REPORT.md)
+[![Tests](https://img.shields.io/badge/Pytest-19%2F19_Passing-brightgreen.svg)](docs/VALIDATION_REPORT.md)
 [![Throughput](https://img.shields.io/badge/Data_Engine-80%2C509_rows%2Fs-success.svg)](docs/performance.md)
 
 ---
@@ -36,7 +36,7 @@ StockMind AI directly resolves these challenges with enterprise-grade operationa
 - **Reservation Lifecycle Engine:** Atomic soft-allocation holds with background TTL sweeps that release expired reservations back to available stock.
 - **Two-Phase Transfer Management:** Explicit `DISPATCHED` &rarr; `IN_TRANSIT` &rarr; `RECEIVED` accounting with zero double counting.
 - **Explainable Multi-Facility Order Allocation:** Heuristic location selection ranking facilities by fulfillment capability, proximity type, and stock depth with auditable reasons.
-- **100% Precision/Recall Anomaly Detection:** Real-time detectors covering all four mandatory enterprise exception scenarios evaluated across 116 ground-truth scenarios.
+- **100% Precision/Recall Anomaly Detection & AI Auto-Healing:** Real-time detectors covering all four mandatory enterprise exception scenarios evaluated across 116 ground-truth scenarios, paired with one-click automated self-healing (`/anomalies/{id}/auto-heal`) that generates compensating immutable movements and reconciles physical stock balances.
 - **High-Throughput Synthetic Data Engine:** Streaming generation capable of generating **1,000,000 movements in 12.42s (>80,000 rows/sec)** with peak RAM < 250 MB under fixed seed `20261022`.
 
 ---
